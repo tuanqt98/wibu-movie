@@ -1,0 +1,42 @@
+<div>
+  <nav class="navbar navbar-expand-sm d-flex fixed-top">
+    <span (click)="toggle = !toggle">
+      <i class="fas fa-bars text-white button-toggle ml-3"></i>
+    </span>
+    <a>
+      <img class="navbar-brand ml-2" src="https://zoro.to/images/logo.png" alt="image" />
+    </a>
+    <div class="align-items-center search-box">
+      <span class="icon-navbar--filter fa-stack" routerLink="/filter">
+        <i class="fas fa-square fa-stack-2x text-white"></i>
+        <i class="fas fa-filter fa-stack-1x text-black"></i>
+      </span>
+      <div class="input-search">
+        <div class="icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="input"><input type="text" placeholder="Search..." /></div>
+        <div id="search"><button class="search">Search</button></div>
+      </div>
+    </div>
+    <div class="ml-auto d-flex align-items-center">
+      <i class="fas fa-search watchlist-icon text-white navbar-search"></i>
+      <div class="dropwdown-palette" *ngIf="show">
+        <div class="dropwdown-palette--list-color d-flex px-2 pt-3">
+          <div class="dropwdown-palette--color dropwdown-palette--color__yellow clicked"></div>
+          <div class="dropwdown-palette--color dropwdown-palette--color__green"></div>
+          <div class="dropwdown-palette--color dropwdown-palette--color__sky"></div>
+        </div>
+      </div>
+      <i class="fas fa-palette wishlist-icon d-none d-lg-flex" (click)="show = !show"></i>
+      <!-- watch lish -->
+      <span
+        class="align-items-center mr-2 watchlist-icon d-none d-md-flex"
+        routerLink="/user/watch-list"
+      >
+        <i class="fas fa-heart fa-2x"></i
+        ><span class="quantity-watchlist"><span class="quantity-watchlist-number"></span></span>
+      </span>
+    </div>
+  </nav>
+</div>
